@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        function reMic(){
+            var str = "Microsoft is a big company,microsoft's color is red and has MICROSOFT logo like Microsoft";
+            re = /microsoft/gi;
+            var res = str.match(re);
+            console.log("共替换"+res.length+"处");
+            var r = str.replace(/microsoft/gi,'微软');
+            console.log(r)
+        }
+    </script>
+    <button onclick="reMic()">替换微软</button>
+</body>
+</html>

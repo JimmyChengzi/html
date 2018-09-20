@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        function sortArr(){
+            var arr = [400,300,200,100];
+            for(j = 0; j < arr.length; j++){
+                for(i = 0;i < arr.length-1; i++){
+                    if(arr[i] > arr[i+1]){
+                        arr[i] ^= arr[i+1];
+                        arr[i+1] ^= arr[i];
+                        arr[i] ^= arr[i+1];
+                    }
+                }
+            }
+            console.log(arr)
+        }
+    </script>
+    <button onclick="sortArr()">数组排序</button>
+</body>
+</html>

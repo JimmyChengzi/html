@@ -1,0 +1,148 @@
+1.python 主要内置数据类型都有那些？
+    int float str list tuple set frozenset dict bytes bytearray 
+  print dir('a')的输出？
+    列出全部字符串'a'的属性和方法
+2.给定两个listA,B,请用python找出A、B中相同的元素和不同的元素？
+    A = [1,1,2,3,4,5]
+    B = [1,3,3,6,7]
+    SetA = set(A)
+    SetB = set(B)
+    Mut = SetA | SetB  #两个表中的元素的总集
+    Same = SetA & SetB  #两个表中相同的元素
+    Diff = Mut - Same   #不同的元素
+3.请反转字符串aStr
+    aStr = aStr[::-1]
+4.交换变量a,b的值
+    a, b = b, a
+5.请指出下面代码存在的问题
+    def lastindextem(str,index)
+        '''请返回传入src，使用空格或者'\'切分后的倒数第index个子串'''
+        return src.split('\')[-index]
+        文档字符串中'\'  实际上会被转义成：
+        "请返回传入src，使用空格或者''切分后的倒数第index个子串"
+6.请写出以下程序的输出
+    a = 'abc'
+    print a[1]
+    a[1] = 'a'
+    print a[1]
+
+    b
+    a[1]="a" 会报错，原因是字符串是不可变序列
+--------------------------
+    class Parent(Object):
+        x = 1
+    class Child1(Parent):
+        pass
+    class Child2(Parent):
+        pass
+    print Parent.x,Child1.x,Child2.x
+    Child.x = 3
+    print Parent.x,Child1.x,Child2.x
+    Parent.x = 'a'
+    print Parent.x,Child1.x,Child2.x
+    1 1 1
+    1 3 3 
+    a 3 3 
+----------------------------------------
+    def count():
+        fs = []
+        for i in range(1,4):
+            def f():
+                return i*i
+            fs.append(f)
+        return fs
+
+    for f in count():
+        print f()
+    9
+    9   
+    9   #先调用count(),此时for循环结束i=3,再调用f()的时候,
+        #i=3    
+--------------------------------------
+    def f(x,l=[]):
+        for i in range(x):
+            l.append(i+i)
+        print l
+
+    f(3)
+    f(3,[3,2,1])
+    f(2)
+    
+    [0,2,4]
+    [3,2,1,0,2,4]
+    [0,2,4,0,2]
+
+def f(x, l=[]):
+    print(id(l))
+    for i in range(x):
+        l.append(i + i)
+    print(id(l))
+    print("########")
+
+
+f(3)
+f(3, [3, 2, 1])
+f(2)
+
+140259593925704
+140259593925704
+########
+140259593907656
+140259593907656
+########
+140259593925704
+140259593925704
+########
+
+
+---------------------------------------
+用一个select语句输出
+每个城市中
+距离市中心大于20KM酒店数
+t1
++------------+------------+--------+
+|name        | city_id    |distance|
++------------+------------+--------+
+|a酒店        |1000        |8       |
+|xx酒店       |1000        |22      |
+|xx酒店       |1000        |6       |
+......
+|xx酒店       |1001        |55      |
+
+select city_id,count(name) from t1 
+where distance > 20
+group by city_id;
+ 
+
+编程题：
+有一个3G大小的文件，文件每行一个string,内容为酒店的id和图片的名字，使用'\t'分割
+示例：ht_1023134 + '\t' + hissnogin123.jpg
+表示的是一个酒店包含的一张图片，统计含有图片数量>20的酒店id,含有图片数量为10-20的酒店id,含有图片5-10,0-5的酒店id,并将结果输出到文件中
+文件格式为
+0-5 + '\t' + id1 + '\t' + id2 + ........
+5-10 + '\t' + id1 + '\t' + id2 + ........
+10-20 + '\t' + id1 + '\t' + id2 + ........
+20-无穷大 + '\t' + id1 + '\t' + id2 + ........
+
+编程题2：
+给定一个int list a,满足a[i+1]>=a[i], 给定int key, 找出list a 中第一个大于等于key的元素的index,无法满足要求的元素返回-1
+函数定义：
+
+def findindex（int_list,int_key):
+
+
+
+加分题：
+
+一、正则表达式：
+
+1.正则匹配中贪婪模式与非贪婪模式的区别
+2.match/search函数的使用及区别
+3.请写出以字母或下划线开始，以数字结束的正则表达式
+
+二、HTTP协议状态码有什么用？列出你知道的HTTP协议的状态码，然后讲出他们都表示什么意思
+
+三、从输入http://www.mioji.com/到页面返回，中间都发生了什么？
+
+
+

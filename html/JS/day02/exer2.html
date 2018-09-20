@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<!--     <script>
+        //手动输入一系列数据,直到输入exit退出，并打印数组
+        var array = [];
+        while(true){
+            var n = window.prompt('请输入数据');
+            if(n == 'exit'){
+                console.log(array);
+                break;
+            }
+            else{
+                array[array.length] = n
+            }
+        }
+    </script> -->
+    <script>
+        var array = ['小明','小红','小芳','小华'];
+        var name = window.prompt('请输入名字');
+        var s = false;
+        for(i = 0;i < array.length;i++){
+            if(name == array[i]){
+                s = true;
+                console.log("下标为: "+i);;
+                break;
+            }
+        }
+        if(!s){
+            console.log('不存在');
+        }
+    </script>
+</body>
+</html>
