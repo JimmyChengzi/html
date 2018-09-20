@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <button onclick="showTime()">显示时间</button>
+    <button >停止</button>
+    <script>
+        function showTime(){
+            setInterval(function(){
+                var t = new Date();
+                console.log(t.toLocaleString());
+            },1000)
+        }
+    </script>
+</body>
+</html>
